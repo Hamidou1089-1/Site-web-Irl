@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets | Hamidou Diallo - Finance Quantitative</title>
-    <meta name="description" content="Découvrez les projets de Hamidou Diallo en finance quantitative, trading algorithmique et machine learning.">
-    <meta name="keywords" content="Hamidou Diallo projets, trading algorithmique, finance quantitative, machine learning">
-    <meta name="author" content="Hamidou Diallo">
+    <title>Projets | Hamidou Diallo</title>
+    <title>Hamidou Diallo - Finance Quantitative ENSIMAG</title>
+    <meta name="description" content="Portfolio de Hamidou Diallo, étudiant à l'ENSIMAG spécialisé en finance quantitative, futur stagiaire à l'INRIA">
+    <meta name="keywords" content="Hamidou Diallo, ENSIMAG, Finance Quantitative, INRIA, Trading Algorithmique">
+    <!-- Ajoutez ces balises pour les réseaux sociaux -->
+    <meta property="og:title" content="Hamidou Diallo - Finance Quantitative">
+    <meta property="og:description" content="Portfolio d'un étudiant en finance quantitative à l'ENSIMAG">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -18,74 +21,132 @@
 </nav>
 
 <div class="main-container">
-    <aside class="sidebar">
-        <ul class="sidebar-nav">
-            <li><a href="#finance">Projets Finance</a></li>
-            <li><a href="#algo">Algorithmes & Trading</a></li>
-            <li><a href="#machine-learning">Machine Learning</a></li>
-            <li><a href="#web">Développement Web</a></li>
-        </ul>
-    </aside>
+    <section class="intro-section">
+        <h1>Mes Projets</h1>
 
-    <main class="content">
-        <section class="hero">
-            <h1>Mes Projets</h1>
-            <p class="subtitle">Portfolio de réalisations en finance quantitative et développement</p>
-        </section>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </section>
 
-        <ul class="nav-pills">
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <section id="finance" class="content-box">
-            <h2>Projets Finance</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Modélisation de Volatilité</h3>
-                    <p>Implémentation de modèles GARCH et analyse de la volatilité des marchés financiers.</p>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>NumPy</span>
-                        <span>Pandas</span>
-                    </div>
-                    <a href="https://github.com/votre-username/projet-volatilite" class="project-link" target="_blank">Voir le projet</a>
+    <!-- Projets Finance Quantitative -->
+    <section class="content-box">
+        <h2>Finance Quantitative</h2>
+        <div class="project-card">
+            <h3>Pricer d'Obligations</h3>
+            <p class="project-type">Projet Personnel</p>
+            <div class="project-details">
+                <p>Développement complet d'un pricer d'obligations utilisant la méthode de bootstrap en Java.</p>
+                <ul>
+                    <li>Implémentation en Java avec principes POO</li>
+                    <li>Calcul des courbes de taux</li>
+                    <li>Interface utilisateur pour la saisie des paramètres</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>Finance Quantitative</span>
+                    <span>POO</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="algo" class="content-box">
-            <h2>Algorithmes & Trading</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Stratégie de Trading Automatisé</h3>
-                    <p>Développement d'une stratégie de trading basée sur les moyennes mobiles et le momentum.</p>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>Backtrader</span>
-                        <span>TA-Lib</span>
-                    </div>
-                    <a href="https://github.com/votre-username/trading-algo" class="project-link" target="_blank">Voir le projet</a>
+    <!-- Hackathons -->
+    <section class="content-box">
+        <h2>Hackathons</h2>
+
+        <div class="project-card">
+            <h3>Trading Algorithmique - Morgan Stanley</h3>
+            <div class="project-details">
+                <p>Développement d'une stratégie de trading algorithmique lors d'un hackathon.</p>
+                <ul>
+                    <li>Analyse de données de marché en temps réel</li>
+                    <li>Implémentation d'indicateurs techniques</li>
+                    <li>Optimisation des paramètres de trading</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Trading Quant</span>
+                    <span>Analyse de données</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="machine-learning" class="content-box">
-            <h2>Machine Learning</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Prédiction de Prix d'Options</h3>
-                    <p>Utilisation de réseaux de neurones pour la prédiction des prix d'options.</p>
-                    <div class="tech-stack">
-                        <span>TensorFlow</span>
-                        <span>Scikit-learn</span>
-                        <span>Keras</span>
-                    </div>
-                    <a href="https://github.com/votre-username/option-pricing" class="project-link" target="_blank">Voir le projet</a>
+        <div class="project-card">
+            <h3>Fixed Income Pricing - Margo</h3>
+            <div class="project-details">
+                <p>Création d'un pricer pour instruments fixed income lors d'un hackathon.</p>
+                <ul>
+                    <li>Modélisation des flux financiers</li>
+                    <li>Calcul de la valeur actualisée</li>
+                    <li>Implémentation des calculs de sensibilité</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Fixed Income</span>
+                    <span>Mathématiques Financières</span>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Projets Académiques -->
+    <section class="content-box">
+        <h2>Projets Académiques</h2>
+
+        <div class="project-card">
+            <h3>Compilateur DECA</h3>
+            <div class="project-details">
+                <p>Construction d'un compilateur pour le langage DECA, sous-ensemble de Java.</p>
+                <ul>
+                    <li>Analyse lexicale et syntaxique</li>
+                    <li>Génération de code</li>
+                    <li>Tests et validation</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>Compilation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Robot Pompier</h3>
+            <div class="project-details">
+                <p>Simulation d'un robot pompier avec stratégies d'extinction optimisées.</p>
+                <ul>
+                    <li>Programmation orientée objet en Java</li>
+                    <li>Algorithmes de pathfinding</li>
+                    <li>Interface graphique de simulation</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>POO</span>
+                    <span>Algorithmes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Allocateur Mémoire</h3>
+            <div class="project-details">
+                <p>Implémentation d'un allocateur mémoire personnalisé en C.</p>
+                <ul>
+                    <li>Gestion de la mémoire bas niveau</li>
+                    <li>Optimisation des allocations</li>
+                    <li>Tests de performances</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>C</span>
+                    <span>Systèmes</span>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <script src="../js/script.js"></script>

@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://Hamidou1089-1.github.io/sitemap.xml

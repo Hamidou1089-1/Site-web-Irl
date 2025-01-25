@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Hamidou Diallo - Étudiant Ensimag</title>
-    <meta name="description" content="Contactez Hamidou Diallo, étudiant en ingénierie financière à l'Ensimag. Disponible pour des opportunités en finance quantitative.">
-    <meta name="keywords" content="Hamidou Diallo contact, Ensimag, finance quantitative, stage">
-    <meta name="author" content="Hamidou Diallo">
+    <title>Contact | Hamidou Diallo - Finance Quantitative</title>
+    <title>Hamidou Diallo - Finance Quantitative ENSIMAG</title>
+    <meta name="description" content="Portfolio de Hamidou Diallo, étudiant à l'ENSIMAG spécialisé en finance quantitative, futur stagiaire à l'INRIA">
+    <meta name="keywords" content="Hamidou Diallo, ENSIMAG, Finance Quantitative, INRIA, Trading Algorithmique">
+    <!-- Ajoutez ces balises pour les réseaux sociaux -->
+    <meta property="og:title" content="Hamidou Diallo - Finance Quantitative">
+    <meta property="og:description" content="Portfolio d'un étudiant en finance quantitative à l'ENSIMAG">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -18,40 +21,79 @@
 </nav>
 
 <div class="main-container">
+
+    <section class="intro-section">
+        <h1>Contact</h1>
+
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Sidebar -->
     <aside class="sidebar">
         <ul class="sidebar-nav">
-            <li><a href="#coordonnees">Coordonnées</a></li>
-            <li><a href="#formulaire">Formulaire</a></li>
-            <li><a href="#reseaux">Réseaux Sociaux</a></li>
-            <li><a href="#disponibilite">Disponibilité</a></li>
+            <li><a href="#contact-info">Coordonnées</a></li>
+            <li><a href="#interests">Centres d'Intérêt</a></li>
+            <li><a href="#availability">Disponibilité</a></li>
         </ul>
     </aside>
 
     <main class="content">
         <section class="hero">
-            <h1>Contact</h1>
-            <p class="subtitle">N'hésitez pas à me contacter pour toute opportunité</p>
+            <p class="subtitle">N'hésitez pas à me contacter pour des opportunités en finance quantitative</p>
         </section>
 
-        <ul class="nav-pills">
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="projets.html">Projets</a></li>
-        </ul>
-
-        <section id="coordonnees" class="content-box">
-            <h2>Mes Coordonnées</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:votre.email@example.com">votre.email@example.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/votre-profil" target="_blank">linkedin.com/in/votre-profil</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/votre-username" target="_blank">github.com/votre-username</a></p>
+        <section id="contact-info" class="content-box">
+            <h2>Coordonnées</h2>
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:Hamidou.Diallo@grenoble-inp.org">Hamidou.Diallo@grenoble-inp.org</a></p>
+                <p><strong>Téléphone:</strong> <a href="tel:+33758618251">+33 (7) 58 61 82 51</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hamidou-diallo" target="_blank">linkedin.com/in/hamidou-diallo</a></p>
             </div>
         </section>
 
-        <section id="formulaire" class="content-box">
+        <section id="interests" class="content-box">
+            <h2>Centres d'Intérêt Professionnels</h2>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <h3>Finance Quantitative</h3>
+                    <p>Modélisation financière, valorisation d'options, gestion des risques</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Trading Algorithmique</h3>
+                    <p>Développement de stratégies systématiques, trading haute fréquence</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Machine Learning</h3>
+                    <p>Applications en finance, apprentissage statistique</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="availability" class="content-box">
+            <h2>Disponibilité</h2>
+            <div class="availability-info">
+                <p>Actuellement en stage de recherche à l'INRIA (Février - Juillet 2025)</p>
+                <p>Intéressé par des opportunités en :</p>
+                <ul>
+                    <li>Quantitative Research</li>
+                    <li>Trading Algorithmique</li>
+                    <li>Finance Quantitative</li>
+                </ul>
+                <p>Disponible pour des entretiens et discussions professionnelles.</p>
+            </div>
+        </section>
+
+        <section id="form" class="content-box">
             <h2>Formulaire de Contact</h2>
-            <form class="contact-form" id="contact-form">
+            <form class="contact-form">
                 <div class="form-group">
-                    <label for="name">Nom complet</label>
+                    <label for="name">Nom</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
@@ -59,40 +101,11 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Sujet</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="modern-button">Envoyer</button>
             </form>
-        </section>
-
-        <section id="reseaux" class="content-box">
-            <h2>Réseaux Sociaux</h2>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/votre-profil" class="social-button" target="_blank">
-                    LinkedIn
-                </a>
-                <a href="https://github.com/votre-username" class="social-button" target="_blank">
-                    GitHub
-                </a>
-                <a href="https://twitter.com/votre-username" class="social-button" target="_blank">
-                    Twitter
-                </a>
-            </div>
-        </section>
-
-        <section id="disponibilite" class="content-box">
-            <h2>Disponibilité</h2>
-            <p>Je suis actuellement à la recherche d'opportunités en :</p>
-            <ul class="availability-list">
-                <li>Stage en Finance Quantitative</li>
-                <li>Projets de recherche en Machine Learning appliqué à la finance</li>
-                <li>Collaborations sur des projets open source</li>
-            </ul>
         </section>
     </main>
 </div>

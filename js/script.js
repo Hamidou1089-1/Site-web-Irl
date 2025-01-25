@@ -1,36 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme Management
+    // Initialisation des différentes fonctionnalités
+    initializeTheme();
+    initializeNavigation();
+    initializeScrollSpy();
+    initializeAnimations();
+    initializeContactForm();
+    initializeProjectFilters();
+});
+
+// Gestion du thème
+function initializeTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Function to set theme
+    // Fonction pour définir le thème
     const setTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+
+        // Ajouter une classe temporaire pour l'animation de transition
+        document.body.classList.add('theme-transitioning');
+        setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+        }, 300);
     };
 
-    // Initialize theme
+    // Initialiser le thème
     const savedTheme = localStorage.getItem('theme') ||
         (prefersDarkScheme.matches ? 'dark' : 'light');
     setTheme(savedTheme);
 
-    // Theme toggle click handler
+    // Gérer le changement de thème
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
     });
 
-    // Handle system theme changes
+    // Gérer les changements de préférences système
     prefersDarkScheme.addEventListener('change', (e) => {
-        const savedTheme = localStorage.getItem('theme');
-        if (!savedTheme) {
+        if (!localStorage.getItem('theme')) {
             setTheme(e.matches ? 'dark' : 'light');
         }
     });
+}
 
-    // Smooth Scroll Navigation
+// Navigation fluide
+function initializeNavigation() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -39,51 +55,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Add smooth scrolling
+                // Défilement fluide
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
 
-                // Update URL without reload
+                // Mettre à jour l'URL sans recharger
                 history.pushState(null, '', targetId);
 
-                // Update active state in sidebar
-                document.querySelectorAll('.sidebar-nav a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
+                // Mettre à jour l'état actif dans la sidebar
+                updateActiveNavItem(targetId);
             }
         });
     });
+}
 
-    // Intersection Observer for scroll spy
+// Scroll Spy amélioré
+function initializeScrollSpy() {
     const observerOptions = {
         root: null,
         rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
+        threshold: [0, 0.25, 0.5, 0.75, 1]
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
                 const id = entry.target.getAttribute('id');
-                document.querySelectorAll('.sidebar-nav a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+                updateActiveNavItem(`#${id}`);
             }
         });
     }, observerOptions);
 
-    // Observe all sections
+    // Observer toutes les sections
     document.querySelectorAll('section[id]').forEach(section => {
         observer.observe(section);
     });
+}
 
-    // Contact Form Handling
+// Mise à jour de l'élément de navigation actif
+function updateActiveNavItem(targetId) {
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === targetId) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Animations
+function initializeAnimations() {
+    // Observer pour les animations d'entrée
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                animationObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observer les éléments à animer
+    document.querySelectorAll('.content-box, .project-card, .skill-item').forEach(element => {
+        element.classList.add('pre-animation');
+        animationObserver.observe(element);
+    });
+}
+
+// Gestion du formulaire de contact
+function initializeContactForm() {
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -94,35 +137,80 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.disabled = true;
                 submitButton.textContent = 'Envoi en cours...';
 
-                const formData = new FormData(contactForm);
-                const formDataObject = Object.fromEntries(formData.entries());
-
-                // Simulate form submission
+                // Simulation d'envoi (à remplacer par votre logique d'envoi réelle)
                 await new Promise(resolve => setTimeout(resolve, 1000));
 
+                // Réinitialiser le formulaire et afficher un message de succès
                 contactForm.reset();
-                alert('Message envoyé avec succès !');
+                showNotification('Message envoyé avec succès!', 'success');
             } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue. Veuillez réessayer.');
+                showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
             } finally {
                 submitButton.disabled = false;
                 submitButton.textContent = 'Envoyer';
             }
         });
     }
+}
 
-    // Add hover effect for touch devices
-    if ('ontouchstart' in window) {
-        document.querySelectorAll('.project-card, .content-box, .modern-button')
-            .forEach(element => {
-                element.addEventListener('touchstart', function() {
-                    this.style.transform = 'translateY(-5px)';
-                }, { passive: true });
+// Filtres des projets
+function initializeProjectFilters() {
+    const projectFilters = document.querySelector('.project-filters');
+    if (projectFilters) {
+        projectFilters.addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-button')) {
+                const filter = e.target.dataset.filter;
 
-                element.addEventListener('touchend', function() {
-                    this.style.transform = '';
-                }, { passive: true });
-            });
+                // Mettre à jour les boutons de filtre
+                document.querySelectorAll('.filter-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                e.target.classList.add('active');
+
+                // Filtrer les projets
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
     }
-});
+}
+
+// Système de notification
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    // Animation d'entrée
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+
+    // Supprimer après 3 secondes
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Gestion de la performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
