@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Portfolio</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
 </head>
 <body>
 <nav class="navbar">
@@ -38,15 +39,15 @@
         <section id="coordonnees" class="content-box">
             <h2>Mes Coordonnées</h2>
             <div class="contact-info">
-                <p><strong>Email:</strong> votre.email@example.com</p>
-                <p><strong>LinkedIn:</strong> linkedin.com/in/votre-profil</p>
-                <p><strong>GitHub:</strong> github.com/votre-username</p>
+                <p><strong>Email:</strong> <a href="mailto:votre.email@example.com">votre.email@example.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/votre-profil" target="_blank">linkedin.com/in/votre-profil</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/votre-username" target="_blank">github.com/votre-username</a></p>
             </div>
         </section>
 
         <section id="formulaire" class="content-box">
             <h2>Formulaire de Contact</h2>
-            <form class="contact-form">
+            <form class="contact-form" id="contact-form">
                 <div class="form-group">
                     <label for="name">Nom complet</label>
                     <input type="text" id="name" name="name" required>
@@ -70,10 +71,26 @@
         <section id="reseaux" class="content-box">
             <h2>Réseaux Sociaux</h2>
             <div class="social-links">
-                <a href="#" class="social-button">LinkedIn</a>
-                <a href="#" class="social-button">GitHub</a>
-                <a href="#" class="social-button">Twitter</a>
+                <a href="https://linkedin.com/in/votre-profil" class="social-button" target="_blank">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/votre-username" class="social-button" target="_blank">
+                    GitHub
+                </a>
+                <a href="https://twitter.com/votre-username" class="social-button" target="_blank">
+                    Twitter
+                </a>
             </div>
+        </section>
+
+        <section id="disponibilite" class="content-box">
+            <h2>Disponibilité</h2>
+            <p>Je suis actuellement à la recherche d'opportunités en :</p>
+            <ul class="availability-list">
+                <li>Stage en Finance Quantitative</li>
+                <li>Projets de recherche en Machine Learning appliqué à la finance</li>
+                <li>Collaborations sur des projets open source</li>
+            </ul>
         </section>
     </main>
 </div>

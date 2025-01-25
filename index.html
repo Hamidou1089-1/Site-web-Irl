@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
 <nav class="navbar">
@@ -31,8 +32,8 @@
         </section>
 
         <ul class="nav-pills">
-            <li><a href="./pages/projets.html">Mes projets</a></li>
-            <li><a href="./pages/contact.html">Contact</a></li>
+            <li><a href="pages/projets.html">Mes projets</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
         </ul>
 
         <section id="about" class="content-box">
@@ -42,17 +43,35 @@
 
         <section id="competences" class="content-box">
             <h2>Compétences</h2>
-            <p>Expertise en:</p>
-            <ul>
-                <li>Finance quantitative</li>
-                <li>Programmation Python</li>
-                <li>Analyse de données</li>
-                <li>Machine Learning</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Finance quantitative</h3>
+                    <p>Modélisation financière, Valorisation d'options, Gestion des risques</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Programmation</h3>
+                    <p>Python, R, C++, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Analyse de données</h3>
+                    <p>Machine Learning, Data Visualization, Statistical Analysis</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formation" class="content-box">
+            <h2>Formation</h2>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <h3>Ensimag INP</h3>
+                    <p>Ingénierie Financière</p>
+                    <span class="date">2022 - Présent</span>
+                </div>
+            </div>
         </section>
     </main>
 </div>
 
-<script src="./js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
