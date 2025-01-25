@@ -3,32 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Contact</title>
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 <nav class="navbar">
     <div class="nav-content">
-        <h2 class="logo">Mon Site</h2>
+        <a href="../index.html" class="nav-logo">Mon Portfolio</a>
         <button id="theme-toggle" class="theme-button">🌙</button>
     </div>
 </nav>
-<main class="container">
-    <section class="hero">
-        <h1 id="titre">Contact</h1>
-        <p class="subtitle">Quantitative researcher</p>
-    </section>
 
-    <section class="content-box">
-        <h2 class="content-title">À propos</h2>
-        <p class="content-text">Je suis étudiant à l'Ensimag INP en 2ième année, Spécialité Inginerie financière.</p>
-    </section>
+<div class="main-container">
+    <aside class="sidebar">
+        <ul class="sidebar-nav">
+            <li><a href="#coordonnees">Coordonnées</a></li>
+            <li><a href="#formulaire">Formulaire</a></li>
+            <li><a href="#reseaux">Réseaux Sociaux</a></li>
+            <li><a href="#disponibilite">Disponibilité</a></li>
+        </ul>
+    </aside>
 
-    <section class="links-section">
-        <a href="/index.html" class="modern-button">Page Principale</a>
-        <a href="projets.html" class="modern-button">Contact</a>
-    </section>
-</main>
-<script src="/js/script.js"> </script>
+    <main class="content">
+        <section class="hero">
+            <h1>Contact</h1>
+            <p class="subtitle">N'hésitez pas à me contacter pour toute opportunité</p>
+        </section>
+
+        <ul class="nav-pills">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+        </ul>
+
+        <section id="coordonnees" class="content-box">
+            <h2>Mes Coordonnées</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> votre.email@example.com</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/votre-profil</p>
+                <p><strong>GitHub:</strong> github.com/votre-username</p>
+            </div>
+        </section>
+
+        <section id="formulaire" class="content-box">
+            <h2>Formulaire de Contact</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="modern-button">Envoyer</button>
+            </form>
+        </section>
+
+        <section id="reseaux" class="content-box">
+            <h2>Réseaux Sociaux</h2>
+            <div class="social-links">
+                <a href="#" class="social-button">LinkedIn</a>
+                <a href="#" class="social-button">GitHub</a>
+                <a href="#" class="social-button">Twitter</a>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="../js/script.js"></script>
 </body>
 </html>

@@ -9,26 +9,50 @@
 <body>
 <nav class="navbar">
     <div class="nav-content">
-        <h2 class="logo">Mon Site</h2>
+        <a href="index.html" class="nav-logo">Mon Portfolio</a>
         <button id="theme-toggle" class="theme-button">🌙</button>
     </div>
 </nav>
-<main class="container">
-    <section class="hero">
-        <h1 id="titre">Bienvenue sur mon site</h1>
-        <p class="subtitle">Quantitative researcher</p>
-    </section>
 
-    <section class="content-box">
-        <h2 class="content-title">À propos</h2>
-        <p class="content-text">Je suis étudiant à l'Ensimag INP en 2ième année, Spécialité Inginerie financière.</p>
-    </section>
+<div class="main-container">
+    <aside class="sidebar">
+        <ul class="sidebar-nav">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </aside>
 
-    <section class="links-section">
-        <a href="./pages/projets.html" class="modern-button">Mes projets</a>
-        <a href="./pages/contact.html" class="modern-button">Contact</a>
-    </section>
-</main>
-<script src="./js/script.js"> </script>
+    <main class="content">
+        <section class="hero">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <p class="subtitle">Quantitative Researcher & Financial Engineering Student</p>
+        </section>
+
+        <ul class="nav-pills">
+            <li><a href="./pages/projets.html">Mes projets</a></li>
+            <li><a href="./pages/contact.html">Contact</a></li>
+        </ul>
+
+        <section id="about" class="content-box">
+            <h2>À propos</h2>
+            <p>Je suis étudiant à l'Ensimag INP en 2ème année, spécialité Ingénierie financière. Passionné par la finance quantitative et le développement informatique.</p>
+        </section>
+
+        <section id="competences" class="content-box">
+            <h2>Compétences</h2>
+            <p>Expertise en:</p>
+            <ul>
+                <li>Finance quantitative</li>
+                <li>Programmation Python</li>
+                <li>Analyse de données</li>
+                <li>Machine Learning</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+<script src="./js/script.js"></script>
 </body>
 </html>

@@ -3,27 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Projets</title>
+    <title>Mes Projets - Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 <nav class="navbar">
     <div class="nav-content">
-        <h2 class="logo">Mes projets</h2>
+        <a href="../index.html" class="nav-logo">Mon Portfolio</a>
         <button id="theme-toggle" class="theme-button">🌙</button>
     </div>
 </nav>
-<main class="container">
-    <section class="content-box">
-        <h2 class="content-title">Présentation des projets</h2>
-        <p class="content-text">Je suis étudiant à l'Ensimag INP en 2ième année, Spécialité Inginerie financière.</p>
-    </section>
 
-    <section class="links-section">
-        <a href="/index.html" class="modern-button">Page Principale</a>
-        <a href="contact.html" class="modern-button">Contact</a>
-    </section>
-</main>
-<script src="/js/script.js"> </script>
+<div class="main-container">
+    <aside class="sidebar">
+        <ul class="sidebar-nav">
+            <li><a href="#finance">Projets Finance</a></li>
+            <li><a href="#algo">Algorithmes & Trading</a></li>
+            <li><a href="#machine-learning">Machine Learning</a></li>
+            <li><a href="#web">Développement Web</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <section class="hero">
+            <h1>Mes Projets</h1>
+            <p class="subtitle">Portfolio de réalisations en finance quantitative et développement</p>
+        </section>
+
+        <ul class="nav-pills">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <section id="finance" class="content-box">
+            <h2>Projets Finance</h2>
+            <div class="project-card">
+                <h3>Modélisation de Volatilité</h3>
+                <p>Implémentation de modèles GARCH et analyse de la volatilité des marchés financiers.</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>NumPy</span>
+                    <span>Pandas</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="algo" class="content-box">
+            <h2>Algorithmes & Trading</h2>
+            <div class="project-card">
+                <h3>Stratégie de Trading Automatisé</h3>
+                <p>Développement d'une stratégie de trading basée sur les moyennes mobiles et le momentum.</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Backtrader</span>
+                    <span>TA-Lib</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="machine-learning" class="content-box">
+            <h2>Machine Learning</h2>
+            <div class="project-card">
+                <h3>Prédiction de Prix d'Options</h3>
+                <p>Utilisation de réseaux de neurones pour la prédiction des prix d'options.</p>
+                <div class="tech-stack">
+                    <span>TensorFlow</span>
+                    <span>Scikit-learn</span>
+                    <span>Keras</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="web" class="content-box">
+            <h2>Développement Web</h2>
+            <div class="project-card">
+                <h3>Portfolio Personnel</h3>
+                <p>Création d'un site web portfolio responsive avec mode sombre/clair.</p>
+                <div class="tech-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="../js/script.js"></script>
 </body>
 </html>
